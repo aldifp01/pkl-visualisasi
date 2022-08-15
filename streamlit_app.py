@@ -10,15 +10,22 @@ model_training = st.container()
 
 def main_page():
     st.title("INI PRAKTIK KERJA LAPANGAN")
-    st.markdown("![Alt Text](https://c.tenor.com/6aMWa1ms0WQAAAAd/gemini31292-confused.gif)")
+    st.markdown("![Alt Text](https://c.tenor.com/wq2ni1rSdrMAAAAd/gemini31292.gif)")
 
 def page2():
     st.markdown("# Asosiasi")
-    st.sidebar.markdown("# Page 2 ❄️")
+    st.sidebar.markdown("# Asosiasi")
+    st.markdown("![Alt Text](https://c.tenor.com/3me9CyyZG8cAAAAC/friday-night.gif)")
 
 def page3():
-    st.markdown("# Page 3 🎉")
-    st.sidebar.markdown("# Page 3 🎉")
+    st.markdown("# Clustering")
+    st.sidebar.markdown("# Clustering")
+    st.markdown("![Alt Text](https://c.tenor.com/WB9lrgDX2m8AAAAM/samin.gif)")
+
+def page4():
+    st.markdown("# Klasifikasi")
+    st.sidebar.markdown("# Klasifikasi")
+    st.markdown("![Alt Text](https://c.tenor.com/gfLUuOk0fVoAAAAd/i-have-hired-kanye-to-stare-at-you-kanye-west.gif)")
 
 page_names_to_funcs = {
     "Main Page": main_page,
