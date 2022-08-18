@@ -1,0 +1,128 @@
+Antecedents,Consequents,Support,Confidence,Lift
+"['Mild Stress', 'Low TN']",['Moderate PreTest'],0.0049504950495049506,1.0,3.8846153846153846
+"['Low CN', 'High CRF', 'Moderate TP']",['Moderate PreTest'],0.0049504950495049506,1.0,3.8846153846153846
+"['Severe Anxiety', 'Low TN']",['Moderate PreTest'],0.0049504950495049506,0.5,1.9423076923076923
+['Low TP'],['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+['Severe Depression'],['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Neutral Delta', 'High CRF']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['High ESF', 'Neutral Delta']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Low TP', 'Moderate ESF']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Low TP', 'Normal Stress']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Mild Anxiety', 'Mild Stress']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Mild Anxiety', 'Moderate Depression']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Mild Anxiety', 'Moderate PostTest']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Neutral Delta', 'Mild Depression']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Mild Stress', 'Neutral Delta']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Neutral Delta', 'Moderate Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate Depression', 'Normal Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['High CP', 'Neutral Delta', 'High CRF']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['High CP', 'Mild Anxiety', 'Moderate Depression']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CN', 'High CP', 'Moderate PostTest']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['High CP', 'Moderate Depression', 'Normal Stress']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['High CP', 'Moderate PostTest', 'Moderate TN']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Severe Anxiety', 'High CP', 'Normal Depression']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Neutral Delta', 'High CRF', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CP', 'High CRF', 'Moderate ESF']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Normal Stress', 'Moderate Depression', 'High CRF']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate TP', 'High CRF', 'Moderate ESF']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['High CRF', 'Severe Anxiety', 'Moderate ESF']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate TN', 'High CRF', 'Normal Anxiety']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Neutral Delta', 'High CRF', 'Normal Depression']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Normal Stress', 'Neutral Delta', 'High CRF']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Mild Stress', 'High PostTest', 'High ESF']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CN', 'High ESF', 'High TP']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Moderate CN', 'High ESF', 'Normal Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CP', 'High ESF', 'Normal Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CRF', 'High ESF', 'Normal Anxiety']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['High ESF', 'Moderate TN', 'Normal Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['High ESF', 'Moderate TN', 'Normal Depression']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Mild Stress', 'High PostTest', 'Moderate TP']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['High PostTest', 'Moderate Depression', 'Negative Delta']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Mild Anxiety', 'Moderate CP', 'High TP']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Mild Anxiety', 'Moderate Depression', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate Depression', 'Normal Stress', 'High TP']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Low CN', 'Moderate Depression', 'Moderate ESF']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Low CN', 'Neutral Delta', 'Moderate TN']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Low CN', 'Neutral Delta', 'Moderate TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Low ESF', 'Moderate TN', 'Normal Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CP', 'Moderate Anxiety', 'Low TN']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Moderate TP', 'Moderate Anxiety', 'Low TN']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Neutral Delta', 'Moderate TP', 'Low TN']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Mild Anxiety', 'Moderate CP', 'Negative Delta']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CN', 'Mild Depression', 'Negative Delta']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CP', 'Mild Depression', 'Negative Delta']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate TN', 'Mild Depression', 'Negative Delta']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Mild Stress', 'Moderate TP', 'Moderate ESF']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CN', 'Negative Delta', 'Normal Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CP', 'Moderate Depression', 'Negative Delta']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CRF', 'Moderate Depression', 'Neutral Delta']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate TN', 'Negative Delta', 'Normal Anxiety']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Moderate CRF', 'High CP', 'High ESF', 'Moderate TN']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CRF', 'High CP', 'High ESF', 'Normal Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['High CP', 'Low CN', 'High PostTest', 'Moderate Depression']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['High CP', 'High PostTest', 'Moderate Depression', 'Normal Stress']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CRF', 'High CP', 'Low CN', 'Moderate Depression']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['High CP', 'Low CN', 'Positive Delta', 'Moderate Depression']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['High CP', 'Moderate TP', 'Moderate ESF', 'Low TN']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CRF', 'High CP', 'Mild Depression', 'Normal Anxiety']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Moderate CRF', 'High CP', 'Moderate Depression', 'Normal Stress']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Low CN', 'Moderate TN', 'High CRF', 'Moderate ESF']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Low CN', 'Moderate TN', 'High CRF', 'Normal Depression']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Low CN', 'Moderate TN', 'High CRF', 'Positive Delta']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CN', 'High CRF', 'Normal Depression', 'Moderate Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate TN', 'High CRF', 'Normal Depression', 'Moderate Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate TN', 'Normal Stress', 'High CRF', 'Moderate Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CN', 'Normal Depression', 'High CRF', 'Normal Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate TN', 'High CRF', 'Normal Anxiety', 'Moderate ESF']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate TP', 'High CRF', 'Normal Depression', 'Moderate ESF']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate TP', 'Normal Stress', 'High CRF', 'Moderate ESF']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Normal Anxiety', 'High CRF', 'Negative Delta', 'Moderate ESF']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Normal Depression', 'High CRF', 'Negative Delta', 'Moderate ESF']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Normal Depression', 'Moderate TN', 'High CRF', 'Normal Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Normal Depression', 'High CRF', 'Negative Delta', 'Normal Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CN', 'High PostTest', 'High ESF', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CRF', 'High PostTest', 'High ESF', 'Moderate TN']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Moderate CRF', 'High PostTest', 'High ESF', 'Negative Delta']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CRF', 'High ESF', 'Moderate TN', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['High ESF', 'Moderate TN', 'Normal Depression', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['High PostTest', 'Moderate Depression', 'Normal Stress', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CRF', 'Low CN', 'High PostTest', 'Moderate Depression']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Low CN', 'High PostTest', 'Moderate Depression', 'Normal Stress']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['High PostTest', 'Moderate TP', 'Negative Delta', 'Moderate Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CRF', 'High PostTest', 'Moderate Depression', 'Negative Delta']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['High PostTest', 'Moderate Depression', 'Negative Delta', 'Moderate ESF']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['High PostTest', 'Moderate TN', 'Negative Delta', 'Normal Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Low CN', 'Moderate TN', 'Normal Anxiety', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Low ESF', 'Moderate CN', 'Normal Depression', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Low TN', 'Moderate CP', 'Negative Delta', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CN', 'Mild Anxiety', 'Positive Delta', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Mild Anxiety', 'Moderate CP', 'Normal Depression', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CN', 'Moderate PostTest', 'Moderate CRF', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CN', 'Moderate PostTest', 'Moderate ESF', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CN', 'Moderate PostTest', 'Normal Stress', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CN', 'Neutral Delta', 'Normal Anxiety', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CRF', 'Moderate Depression', 'Normal Stress', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CRF', 'Severe Anxiety', 'Negative Delta', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate TN', 'Moderate PostTest', 'Moderate ESF', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Severe Anxiety', 'Moderate ESF', 'Negative Delta', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate PostTest', 'Moderate TN', 'Normal Depression', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Normal Stress', 'Moderate PostTest', 'Moderate TN', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Normal Anxiety', 'Moderate TN', 'Negative Delta', 'High TP']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CRF', 'Mild Anxiety', 'Low CN', 'Negative Delta']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CP', 'Low CN', 'Negative Delta', 'Moderate Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CP', 'Low CN', 'Normal Depression', 'Moderate Anxiety']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Normal Depression', 'Low CN', 'Negative Delta', 'Moderate Anxiety']",['High PreTest'],0.009900990099009901,1.0,1.3557046979865772
+"['Moderate CRF', 'Mild Anxiety', 'Negative Delta', 'Low TN']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate TP', 'Moderate ESF', 'Mild Depression', 'Low TN']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate CP', 'Moderate ESF', 'Moderate Anxiety', 'Low TN']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+"['Moderate TP', 'Moderate ESF', 'Moderate Anxiety', 'Low TN']",['High PreTest'],0.0049504950495049506,1.0,1.3557046979865772
+['High CN'],['Moderate PreTest'],0.0049504950495049506,0.33333333333333337,1.294871794871795
+['Moderate Stress'],['Moderate PreTest'],0.0049504950495049506,0.33333333333333337,1.294871794871795
+"['Low CN', 'Mild Stress']",['Moderate PreTest'],0.0049504950495049506,0.33333333333333337,1.294871794871795
+"['Mild Stress', 'Normal Depression']",['Moderate PreTest'],0.0049504950495049506,0.33333333333333337,1.294871794871795
+"['High CP', 'Moderate TP', 'Low TN']",['Moderate PreTest'],0.0049504950495049506,0.33333333333333337,1.294871794871795
+"['Moderate CRF', 'Low CN', 'Severe Anxiety']",['Moderate PreTest'],0.0049504950495049506,0.33333333333333337,1.294871794871795
+"['Low CN', 'Severe Anxiety', 'Moderate ESF']",['Moderate PreTest'],0.0049504950495049506,0.33333333333333337,1.294871794871795
+"['Low CN', 'Moderate TN', 'Normal Anxiety']",['Moderate PreTest'],0.0049504950495049506,0.33333333333333337,1.294871794871795
+"['High CP', 'Low CN', 'Moderate TP', 'Moderate ESF']",['Moderate PreTest'],0.0049504950495049506,0.33333333333333337,1.294871794871795
+['Moderate PostTest'],['Moderate PreTest'],0.019801980198019802,0.3076923076923077,1.1952662721893492
