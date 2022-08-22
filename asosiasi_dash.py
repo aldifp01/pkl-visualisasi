@@ -50,7 +50,7 @@ def asosiasi():
     #barchart general
     bar_ap_general = alt.Chart(ap_general).mark_bar().encode(
         x=alt.X('Consequents', type='nominal', sort=None),y='counts',
-        ).configure_mark(color='#7ec798').properties(width=800,height=600).interactive()
+        tooltip=['Consequents', 'counts']).configure_mark(color='#7ec798').properties(width=800,height=600).interactive()
     st.altair_chart(bar_ap_general)
     st.markdown("Visualisasi diatas menunjukan frekuensi consequent yang muncul secara umum. Terlihat 'High Postest' memiliki jumlah kemunculan paling tinggi, diikuti 'Normal Stress' dan 'Moderate ESF'.")
     
@@ -61,7 +61,7 @@ def asosiasi():
     #barchart pretest, posttest dan delta
     bar_ap_vis = alt.Chart(ap_vis).mark_bar().encode(
         x=alt.X('Consequents', type='nominal', sort=None),y='Jumlah',
-        ).configure_mark(color='#7ec798').properties(width=800,height=600).interactive()
+        tooltip=['Consequents', 'Jumlah']).configure_mark(color='#7ec798').properties(width=800,height=600).interactive()
     st.altair_chart(bar_ap_vis)
 
     #Scatter plot
@@ -92,12 +92,15 @@ def asosiasi():
     st.markdown("## 3. Perbandingan Algoritma")
 
     #Line chart
+    st.markdown("#### Perbandingan waktu eksekusi pada confidence dan support yang berbeda pada algoritma Apriori")
     line = alt.Chart(df_time_ap_1).mark_line().encode(x=alt.X('conf',scale=alt.Scale(zero=False)), y=alt.Y('elapsed_time',scale=alt.Scale(zero=False)),color = alt.Color('supp:N', scale=alt.Scale(scheme='set1')),tooltip=['conf','supp','elapsed_time','rule_count']).properties(width=800,height=600).interactive()
     st.altair_chart(line)
 
+    st.markdown("#### Perbandingan waktu eksekusi pada jumlah antecedent yang berbeda")
     line = alt.Chart(df_time_ap_2).mark_line().encode(x=alt.X('n_len:N',scale=alt.Scale(zero=False)), y=alt.Y('elapsed_time',scale=alt.Scale(zero=False)),tooltip=['conf','supp','elapsed_time','rule_count']).configure_mark(color='#ffa06b').properties(width=800,height=600).interactive()
     st.altair_chart(line)
 
+    st.markdown("#### Perbandingan waktu eksekusi pada confidence dan support yang berbeda pada algoritma FP-Growth")
     line = alt.Chart(df_time_fp).mark_line().encode(x=alt.X('conf',scale=alt.Scale(zero=False)), y=alt.Y('elapsed_time',scale=alt.Scale(zero=False)),color = alt.Color('supp:N', scale=alt.Scale(scheme='set1')),tooltip=['conf','supp','elapsed_time','rule_count']).properties(width=800,height=600).interactive()
     st.altair_chart(line)
 
