@@ -8,6 +8,7 @@ import plotly.graph_objs as go
 from st_aggrid import AgGrid
 import asosiasi_dash 
 import klasifikasi_dash
+import clustering_dash
 
 header = st.container()
 dataset = st.container()
@@ -35,7 +36,7 @@ def page4():
 page_names_to_funcs = {
     "Main Page": main_page,
     "Asosiasi": asosiasi_dash.asosiasi,
-    "Clustering": page3,
+    "Clustering": clustering_dash.clustering,
     "Klasifikasi": klasifikasi_dash.klasifikasi,
 }
 
