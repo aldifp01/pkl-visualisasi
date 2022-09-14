@@ -238,9 +238,13 @@ def clustering():
 
     # st.title("Clustering")
     st.markdown("<h1 style='text-align: center; color: system;'>---Clustering---</h1>", unsafe_allow_html=True)
+    st.markdown("<hr></hr><hr></hr>", unsafe_allow_html=True)
     st.sidebar.markdown("# Clustering")
     st.sidebar.markdown("## 195150207111039")
     st.sidebar.markdown("## Hasyir Daffa Ibrahim")
+    st.markdown("Pada clustering, digunakan 3 algoritma machine learning:")
+    st.markdown("1. K-Means\n2. Gaussian Mixture\n3. Fuzzy C-Means")
+    st.markdown("<hr></hr>", unsafe_allow_html=True)
 
     st.markdown("## 1. Algortima KMeans")
     st.markdown("### 1.1. AEQ")
@@ -473,10 +477,23 @@ def clustering():
     st.markdown("## 4. Evaluasi Silhouette Score")
     st.markdown("### 4.1. AEQ Silhouette Score")
     bar_silhouette(aeq_sil)
+    st.write('''Bruh moment''')
     st.markdown("### 4.2. DASS Silhouette Score")
     bar_silhouette(dass_sil)
     st.markdown("### 4.3. ERQ Silhouette Score")
     bar_silhouette(erq_sil)
+    st.markdown('''Pada visualisasi diatas, didapatkan hasil performa ketiga algoritma terhadap silhouette score dalam melakukan clustering pada AEQ, DASS dan ERQ dengan masing - masing hasilnya yang bervariasi.
+1. Penjabaran pada AEQ
+Faktor Class Positive diperoleh nilai tertinggi nya oleh KMeans, Faktor Class Negative diperoleh tertinggi oleh Gaussian Mixture, Faktor Test Positive diperoleh nilai tertinggi oleh Gaussian Mixture dan pada Test Negative diperoleh nilai tertinggi oleh Fuzzy CMeans
+
+2. Penjabaran pada DASS
+Faktor Depression diperoleh nilai tertingginya oleh KMeans, Faktor Anxiety diperoleh niali tertingginya oleh KMeans dan pada Stress diperoleh nilai tertinggi oleh Fuzzy CMeans
+
+3. Penjabaran pada ERQ
+Faktor CRF diperoleh nilai tertingginya oleh KMEans dan Fuzzy CMeans. Kemudian pada faktor ESF diperoleh nilai tertinggi oleh KMeans
+
+Hal yang perlu diingat dalam proses clustering adalah nilai silhouette score dalam clustering menjadi salah satu fokus utama dalam pembelajaran mesinnya. Karena tujuan utama dalam melakukan clustering adalah membuat pengelompokkan terhadap data yang sifatnya mirip dengan data yang lain dimasukkan ke dalam satu kelompok dan jika sifatnya berbeda dengan data lain maka akan dipisahkan kelompoknya. Silhouette score disini menilai tentang seberapa baik sebuah cluster tersebut dibentuk dan seberapa baik cluster tersebut terpisah - pisah.''')
+
 
     st.markdown("<hr></hr><hr></hr>", unsafe_allow_html=True)
     st.markdown("## 5. Evaluasi Accuracy Score")
@@ -486,4 +503,9 @@ def clustering():
     bar_accuracy(dass_acc)
     st.markdown("### 5.3. ERQ Accuracy Score")
     bar_accuracy(erq_acc)
+    st.markdown('''Pada visualisasi diatas, didapatkan hasil performa ketiga algoritma terhadap akurasinya dalam melakukan clustering pada AEQ, DASS dan ERQ dengan masing - masing hasilnya yang bervariasi. Nilai tertinggi diperoleh oleh Gaussian Mixture pada AEQ, kemudian KMeans pada DASS dan Fuzzy CMeans pada ERQ.
+
+Hal yang perlu diingat dalam proses clustering adalah nilai akurasi dalam clustering tidak menjadi fokus utama dalam pembelajaran mesinnya. Karena tujuan utama dalam melakukan clustering adalah membuat pengelompokkan terhadap data yang sifatnya mirip dengan data yang lain dimasukkan ke dalam satu kelompok dan jika sifatnya berbeda dengan data lain maka akan dipisahkan kelompoknya. 
+
+Dalam melakukan clustering, data yang berada didalam suatu kelompok adalah data yang "mirip" dan belum tentu identikal. Hal tersebut yang seringkali menurunkan tingkat akurasi pada hasil clustering. ''')
 

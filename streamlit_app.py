@@ -9,6 +9,7 @@ from st_aggrid import AgGrid
 import asosiasi_dash 
 import klasifikasi_dash
 import clustering_dash
+import main_dash
 
 header = st.container()
 dataset = st.container()
@@ -34,7 +35,7 @@ def page4():
     st.markdown("![Alt Text](https://c.tenor.com/gfLUuOk0fVoAAAAd/i-have-hired-kanye-to-stare-at-you-kanye-west.gif )")
 
 page_names_to_funcs = {
-    "Main Page": main_page,
+    "Main Page": main_dash.main_page,
     "Asosiasi": asosiasi_dash.asosiasi,
     "Clustering": clustering_dash.clustering,
     "Klasifikasi": klasifikasi_dash.klasifikasi,

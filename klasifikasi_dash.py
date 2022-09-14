@@ -34,11 +34,11 @@ def acc_bar_plot(acc):
 def view_conf_matrix(NB, SVM, KNN):
     with st.expander("Show Content"):
         st.write("Naive Bayes")
-        AgGrid(NB)
+        st.table(NB.fillna(' ').set_index('Classification'))
         st.write("Support Vector Machine")
-        AgGrid(SVM)
+        st.table(SVM.fillna(' ').set_index('Classification'))
         st.write("K-Nearest Neighbor")
-        AgGrid(KNN)
+        st.table(KNN.fillna(' ').set_index('Classification'))
 
 
 # fungsi preprocessing data ringkasan akurasi klasifikasi
@@ -51,6 +51,11 @@ def get_acc_summary(classification, acc):
         acc_temp.insert(2, 'Algorithm', algorithm)
         acc_res = pd.concat([acc_res, acc_temp], ignore_index=True)
     return acc_res
+
+
+# fungsi untuk menghapus postfix pada data nilai
+def delete_postfix_nilai(df):
+    return df['Class'].replace(['High PreTest'], 'High').replace(['Moderate PreTest'], 'Moderate').replace(['Low PreTest'], 'Low').replace(['High PostTest'], 'High').replace(['Moderate PostTest'], 'Moderate').replace(['Low PostTest'], 'Low').replace(['Positive Delta'], 'Positive').replace(['Negative Delta'], 'Negative')
 
 
 def klasifikasi():
@@ -84,12 +89,15 @@ def klasifikasi():
     cm_ce_KNN = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ce_KNN')
 
 
-    st.markdown("# Klasifikasi")
+    # st.markdown("# Klasifikasi")
+    st.markdown("<h1 style='text-align: center; color: system;'>---Klasifikasi---</h1>", unsafe_allow_html=True)
+    st.markdown("<hr></hr><hr></hr>", unsafe_allow_html=True)
     st.sidebar.markdown("# Klasifikasi")
     st.sidebar.markdown("## 195150200111039")
     st.sidebar.markdown("## Riski Darmawan")
     st.markdown("Pada klasifikasi, digunakan 3 algoritma machine learning yang akan dibandingkan performanya:")
     st.markdown("1. Naive Bayes\n2. Support Vector Machine\n3. K-Nearest Neighbor")
+    st.markdown("<hr></hr>", unsafe_allow_html=True)
 
 
     ########### AEQ ############
@@ -98,9 +106,11 @@ def klasifikasi():
 
     # st.write(acc_aeq)
     acc_bar_plot(acc_aeq)
+    st.write('''Pada visualisasi di atas, diketahui bahwa ketiga algoritma dapat mengklasifikasikan data AEQ dengan sangat baik. Hal ini dapat dilihat dari akurasi yang ditunjukkan diagram batang, di mana setidaknya akurasi berada di atas 90% bahkan mencapai 100% pada algoritma Support Vector Machine. Bagian Summary menunjukkan rata-rata akurasi algoritma terhadap data AEQ. Dari ketiga algoritma klasifikasi yang digunakan, diketahui bahwa Support Vector Machine memiliki akurasi yang paling tinggi dibandingkan dengan dua algoritma lainnya.''')
     
     st.markdown("#### Confusion Matrix")
     view_conf_matrix(cm_aeq_NB, cm_aeq_SVM, cm_aeq_KNN)
+    st.markdown("<hr></hr>", unsafe_allow_html=True)
 
 
     ########### DASS ############
@@ -109,9 +119,11 @@ def klasifikasi():
 
     # st.write(acc_dass)
     acc_bar_plot(acc_dass)
+    st.write('''Pada visualisasi di atas, diketahui bahwa ketiga algoritma dapat mengklasifikasikan data DASS dengan sangat baik. Namun, tidak cukup baik pada regulasi emosi Anxiety dimana algoritma Naive Bayes dan K-Nearest Neighbor mengalami penurunan akurasi yang cukup banyak. Bagian Summary menunjukkan rata-rata akurasi algoritma terhadap data DASS. Dari ketiga algoritma klasifikasi yang digunakan, diketahui bahwa Support Vector Machine memiliki akurasi yang paling tinggi dibandingkan dengan dua algoritma lainnya.''')
 
     st.markdown("#### Confusion Matrix")
     view_conf_matrix(cm_dass_NB, cm_dass_SVM, cm_dass_KNN)
+    st.markdown("<hr></hr>", unsafe_allow_html=True)
 
 
     ########### ERQ ############
@@ -120,9 +132,11 @@ def klasifikasi():
 
     # st.write(acc_erq)
     acc_bar_plot(acc_erq)
+    st.write('''Pada visualisasi di atas, diketahui bahwa ketiga algoritma dapat mengklasifikasikan data ERQ dengan sangat baik. Hal ini dapat dilihat dari akurasi yang ditunjukkan diagram batang, di mana setidaknya akurasi berada di atas 90% bahkan mencapai 100% pada algoritma Support Vector Machine. Bagian Summary menunjukkan rata-rata akurasi algoritma terhadap data ERQ. Dari ketiga algoritma klasifikasi yang digunakan, diketahui bahwa Support Vector Machine memiliki akurasi yang paling tinggi dibandingkan dengan dua algoritma lainnya. Algoritma Support Vector Machine dapat mengkalsifikasikan data ERQ dengan sempurna, sehingga didapatkan akurasi sebesar 100%.''')
 
     st.markdown("#### Confusion Matrix")
     view_conf_matrix(cm_erq_NB, cm_erq_SVM, cm_erq_KNN)
+    st.markdown("<hr></hr>", unsafe_allow_html=True)
 
 
     ########### Nilai Emosi ############
@@ -132,9 +146,14 @@ def klasifikasi():
 
     # st.write(acc_ne)
     acc_bar_plot(acc_ne)
+    st.write('''Pada visualisasi di atas, diketahui bahwa ketiga algoritma dapat mengklasifikasikan data Nilai Emosi dengan cukup baik namun rendah pada algoritma Naive Bayes. Hal ini dapat dilihat dari akurasi yang ditunjukkan diagram batang, di mana setidaknya akurasi berada di atas 80% selain algoritma Naive Bayes. Bagian Summary menunjukkan rata-rata akurasi algoritma terhadap data Nilai Emosi. Dari ketiga algoritma klasifikasi yang digunakan, diketahui bahwa K-Nearest memiliki akurasi yang paling tinggi dibandingkan dengan dua algoritma lainnya, namun hanya berbeda sedikit dengan Support Vector Machine.''')
 
     st.markdown("### Confusion Matrix")
+    cm_ne_NB['Class'] = delete_postfix_nilai(cm_ne_NB)
+    cm_ne_SVM['Class'] = delete_postfix_nilai(cm_ne_SVM)
+    cm_ne_KNN['Class'] = delete_postfix_nilai(cm_ne_KNN)
     view_conf_matrix(cm_ne_NB, cm_ne_SVM, cm_ne_KNN)
+    st.markdown("<hr></hr>", unsafe_allow_html=True)
 
 
     ########### Klasifikasi Emosi ############
@@ -144,10 +163,15 @@ def klasifikasi():
 
     # st.write(acc_ce)
     acc_bar_plot(acc_ce)
+    st.write('''Pada visualisasi di atas, diketahui bahwa ketiga algoritma dapat mengklasifikasikan data Class Emosi dengan akurasi rendah. Hal ini dapat dilihat dari akurasi yang ditunjukkan diagram batang, di mana akurasi tiap algoritma tidak ada yang mencapai 80%, bahkan hanya 50%. Hasil akurasi ini sangat rendah jika dibandingkan dengan klasifikasi nilai menggunakan data Nilai Emosi. Hal ini sangat dimungkinkan terjadi karena klasifikasi Class Emosi menggunakan data regulasi emosi secara langsung atau dengan kata lain generalisasi / kesimpulan dari emosi yang dimiliki mahasiswa. Sedangkan klasifikasi Nilai Emosi menggunakan data yang membentuk regulasi emosi mahasiswa sehingga data menjadi lebih banyak dan spesifik. Oleh sebab itu, akurasi pada Class Emosi tidak baik dan datanya tidak cocok digunakan untuk mengklasifikasikan nilai mahasiswa akibat kurang spesifiknya emosi mahasiswa yang menggambarkan nilai yang didapatkan.''')
 
     st.markdown("#### Confusion Matrix")
+    cm_ce_NB['Class'] = delete_postfix_nilai(cm_ce_NB)
+    cm_ce_SVM['Class'] = delete_postfix_nilai(cm_ce_SVM)
+    cm_ce_KNN['Class'] = delete_postfix_nilai(cm_ce_KNN)
     view_conf_matrix(cm_ce_NB, cm_ce_SVM, cm_ce_KNN)
-    
+    st.markdown("<hr></hr>", unsafe_allow_html=True)
+
     
     ########### Ringkasan Klasifikasi ############
     st.markdown("## 6. Ringkasan Akurasi Klasifikasi")
@@ -169,5 +193,3 @@ def klasifikasi():
         ).properties(width=130)
     st.altair_chart(bar_sum)
 
-
-    
