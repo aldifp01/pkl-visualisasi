@@ -32,16 +32,15 @@
 <hr></hr>
 
 ## **Deskripsi Proyek** 
-<small>(bisa ditambahkan/diperbaiki)</small>
 
-Proyek yang diberikan adalah melakukan pembelajaran mesin/machine learning terhadap dataset yaitu kuesioner faktor afektif pembelajaran daring melalui HSS Learning. Pada proyek ini digunakan tiga jenis algoritma yakni klasifikasi, clustering, dan asosiasi.
+Proyek yang dilaksanakan bernama Analisis Sisi Afektif pada Technology Supported Learning Pembelajaran HTML dan CSS dengan pendekatan Data Sains. Proyek berupa pembelajaran mesin atau machine learning terhadap dataset faktor afektif dan kinerja mahasiswa pada pembelajaran daring melalui platform HSS Learning. Faktor afektif merupakan kualitas yang menunjukkan bagaimana seseorang mengungkapkan perasaan atau emosi. Faktor afektif digunakan karena selama ini hasil belajar seorang pelajar masih sering hanya diukur dengan faktor kognitif saja, padahal terdapat faktor-faktor lain yang memiliki peran dan pengaruh besar. Kinerja mahasiswa merupakan hasil belajar yang merujuk pada nilai dan pencapaian yang didapatkan mahasiswa dalam proses belajar. Faktor afektif diukur menggunakan Likert Scale melalui kuesioner setelah menggunakan platform HSS Learning. Sedangkan kinerja mahasiswa diukur menggunakan tes pemahaman mahasiswa sebelum dan sesudah menggunakan HSS Learning. Pada proyek ini, digunakan tiga jenis algoritma yakni klasifikasi, clustering, dan asosiasi
 
 <hr></hr>
 
 ## **Deskripsi Dataset**
 
 Terdiri dari 4 instrumen:
-1. Achievement Emotion Questionnaire (AEQ-s), dibagi menjadi Class-Related Emotions dan Test-Related Emotions Masing-masing mengevaluasi emosi positif dan emosi negatif
+1. Achievement Emotion Questionnaire (AEQ-s), dibagi menjadi Class-Related Emotions dan Learning-Related Emotions Masing-masing mengevaluasi emosi positif dan emosi negatif
 2. Depression, Anxiety, and Stress Scale (DASS-21)
 3. Emotion Regulation Questionnaire (ERQ)
 4. Nilai Mahasiswa, dibagi menjadi Nilai Pre-test dan Post-test
