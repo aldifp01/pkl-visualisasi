@@ -15,9 +15,9 @@
 
 <center> 
 
-![avatar](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54304759?v=4&h=50&w=50&fit=cover&mask=circle&maxage=7d)
-![avatar](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71130014?v=4&h=50&w=50&fit=cover&mask=circle&maxage=7d)
-![avatar](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/73750362?v=4&h=50&w=50&fit=cover&mask=circle&maxage=7d)
+<a href="https://github.com/stndb01" rel="some text">![avatar](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54304759?v=4&h=50&w=50&fit=cover&mask=circle&maxage=7d)</a>
+<a href="https://github.com/ariskidarma" rel="some text">![avatar](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71130014?v=4&h=50&w=50&fit=cover&mask=circle&maxage=7d)</a>
+<a href="https://github.com/MelanGnrx" rel="some text">![avatar](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/73750362?v=4&h=50&w=50&fit=cover&mask=circle&maxage=7d)</a>
 
 </center>
 
