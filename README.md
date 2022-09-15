@@ -33,7 +33,11 @@
 
 ## **Deskripsi Proyek** 
 
+<div style="text-align: justify"> 
+
 Proyek yang dilaksanakan bernama Analisis Sisi Afektif pada Technology Supported Learning Pembelajaran HTML dan CSS dengan pendekatan Data Sains. Proyek berupa pembelajaran mesin atau machine learning terhadap dataset faktor afektif dan kinerja mahasiswa pada pembelajaran daring melalui platform HSS Learning. Faktor afektif merupakan kualitas yang menunjukkan bagaimana seseorang mengungkapkan perasaan atau emosi. Faktor afektif digunakan karena selama ini hasil belajar seorang pelajar masih sering hanya diukur dengan faktor kognitif saja, padahal terdapat faktor-faktor lain yang memiliki peran dan pengaruh besar. Kinerja mahasiswa merupakan hasil belajar yang merujuk pada nilai dan pencapaian yang didapatkan mahasiswa dalam proses belajar. Faktor afektif diukur menggunakan Likert Scale melalui kuesioner setelah menggunakan platform HSS Learning. Sedangkan kinerja mahasiswa diukur menggunakan tes pemahaman mahasiswa sebelum dan sesudah menggunakan HSS Learning. Pada proyek ini, digunakan tiga jenis algoritma yakni klasifikasi, clustering, dan asosiasi
+
+</div>
 
 <hr></hr>
 
