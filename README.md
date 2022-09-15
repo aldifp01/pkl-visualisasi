@@ -67,3 +67,17 @@ Algoritma yang digunakan untuk Asosiasi:
 2. Frequent Pattern Growth
 
 <hr></hr>
+
+### **Cara menjalankan dashboard**
+
+```
+git clone https://github.com/stndb01/pkl-visualisasi.git
+cd pkl-visualisasi/
+pip install requirements.txt
+pip install streamlit
+streamlit run streamlit_app.py 
+```
+
+Setelah streamlit berjalan, dashboard dapat dilihat pada url **http://localhost:8501**
+
+<hr></hr>
