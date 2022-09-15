@@ -77,7 +77,7 @@ Algoritma yang digunakan untuk Asosiasi:
 ```
 git clone https://github.com/stndb01/pkl-visualisasi.git
 cd pkl-visualisasi/
-pip install requirements.txt
+pip install -r requirements.txt
 pip install streamlit
 streamlit run streamlit_app.py 
 ```

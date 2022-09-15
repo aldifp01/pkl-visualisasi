@@ -88,43 +88,11 @@ def view_cluster_data(Pretest,Posttest,Delta):
         st.markdown("##### Delta")
         AgGrid(Delta)
 
-# def counter_cluster(data):
-#     return 1
-
 def preposess_name(df):
     bruh = df.iloc[:,:-2].astype(str).apply(lambda x : x+' '+x.name)
     bruh["Nilai"] = df.iloc[:,-2]
     bruh["Cluster"] = df["Cluster"]
     return bruh
-
-# def hitung_common(df,name):
-#     # st.write("#### Top 2 Most Common Pattern of:",name)
-#     st.write('#### Pola Emosi',name)
-     
-#     convert_1 = preposess_name(df)
-#     df_all = pd.DataFrame()
-#     for clus in range(len(convert_1["Cluster"].unique())):
-#         convert = convert_1.iloc[:,:-1].loc[convert_1["Cluster"] == clus].itertuples(index=False,name=None)
-#         bruh = Counter(convert).most_common(2)
-#         df_new = pd.DataFrame(bruh,columns=['Pola Emosi','Jumlah'])
-#         df_new['Cluster'] = clus
-#         df_all = pd.concat([df_all,df_new])
-
-#     hide_table_row_index = """
-#             <style>
-#             thead tr th:first-child {display:none}
-#             tbody th {display:none}
-#             </style>
-#             """
-#     st.markdown(hide_table_row_index, unsafe_allow_html=True)
-#     with st.expander('View Top Pattern'):
-#         st.table(df_all)
-#         # st.table(df_all)
-#     # return st.table(df_all)
-
-# def hitung_jumlah_per_cluster(df):
-#     df.value_counts()
-#     return 1
 
 def hitung_common(df,name):
     st.write('#### Faktor Afektif',name)
@@ -214,29 +182,29 @@ def clustering():
         ade_fuzzy_posttest = pd.read_excel(xls,'fuzzy-ade-posttest')
         ade_fuzzy_delta = pd.read_excel(xls,'fuzzy-ade-delta')
 
-        # KModes CMeans AEQ
-        aeq_kmodes_pretest = pd.read_excel(xls,'kmodes-aeq-pretest')
-        aeq_kmodes_posttest = pd.read_excel(xls,'kmodes-aeq-posttest')
-        aeq_kmodes_delta = pd.read_excel(xls,'kmodes-aeq-delta')
-        # KModes CMeans DASS
-        dass_kmodes_pretest = pd.read_excel(xls,'kmodes-dass-pretest')
-        dass_kmodes_posttest = pd.read_excel(xls,'kmodes-dass-posttest')
-        dass_kmodes_delta = pd.read_excel(xls,'kmodes-dass-delta')
-        # KModes CMeans ERQ
-        erq_kmodes_pretest = pd.read_excel(xls,'kmodes-erq-pretest')
-        erq_kmodes_posttest = pd.read_excel(xls,'kmodes-erq-posttest')
-        erq_kmodes_delta = pd.read_excel(xls,'kmodes-erq-delta')
-        # KModes CMeans ALL
-        ade_kmodes_pretest = pd.read_excel(xls,'kmodes-ade-pretest')
-        ade_kmodes_posttest = pd.read_excel(xls,'kmodes-ade-posttest')
-        ade_kmodes_delta = pd.read_excel(xls,'kmodes-ade-delta')
+        # # KModes CMeans AEQ
+        # aeq_kmodes_pretest = pd.read_excel(xls,'kmodes-aeq-pretest')
+        # aeq_kmodes_posttest = pd.read_excel(xls,'kmodes-aeq-posttest')
+        # aeq_kmodes_delta = pd.read_excel(xls,'kmodes-aeq-delta')
+        # # KModes CMeans DASS
+        # dass_kmodes_pretest = pd.read_excel(xls,'kmodes-dass-pretest')
+        # dass_kmodes_posttest = pd.read_excel(xls,'kmodes-dass-posttest')
+        # dass_kmodes_delta = pd.read_excel(xls,'kmodes-dass-delta')
+        # # KModes CMeans ERQ
+        # erq_kmodes_pretest = pd.read_excel(xls,'kmodes-erq-pretest')
+        # erq_kmodes_posttest = pd.read_excel(xls,'kmodes-erq-posttest')
+        # erq_kmodes_delta = pd.read_excel(xls,'kmodes-erq-delta')
+        # # KModes CMeans ALL
+        # ade_kmodes_pretest = pd.read_excel(xls,'kmodes-ade-pretest')
+        # ade_kmodes_posttest = pd.read_excel(xls,'kmodes-ade-posttest')
+        # ade_kmodes_delta = pd.read_excel(xls,'kmodes-ade-delta')
 
     ################################################################################################################
 
     ################################################################################################################
     ################################################# BAGIAN HALAMAN ###############################################
 
-    # st.title("Clustering")
+    
     st.markdown("<h1 style='text-align: center; color: system;'>---Clustering---</h1>", unsafe_allow_html=True)
     st.markdown("<hr></hr><hr></hr>", unsafe_allow_html=True)
     st.sidebar.markdown("# Clustering")
@@ -253,10 +221,10 @@ def clustering():
     hitung_common(aeq_kmeans_posttest.iloc[:,1:],"AEQ pada Posttest")
     hitung_common(aeq_kmeans_delta.iloc[:,1:],"AEQ pada Delta")
     st.markdown("<h3 style='text-align: center; color: system;'>Faktor AEQ yang mempengaruhi hasil ujian</h3>", unsafe_allow_html=True)
-    st.markdown("**POSTTEST | Cluster 0 : 46 | Cluster 1 : 88 | Cluster 2 : 68**")
-    st.markdown("**Cluster 0**: Moderate Class Positive, Low Class Negative, Moderate Test Positive, Low Test Negative, High PostTest")
+    st.markdown("**POSTTEST | Cluster 0 : 88 | Cluster 1 : 68 | Cluster 2 : 46**")
+    st.markdown("**Cluster 0**: High Class Positive, Moderate Class Negative, High Test Positive, Moderate Test Negative, High PostTest")
     st.markdown("**Cluster 1**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, High PostTest")
-    st.markdown("**Cluster 2**: High Class Positive, Moderate Class Negative, High Test Positive, Moderate Test Negative, High PostTest")
+    st.markdown("**Cluster 2**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, High PostTest")
 
     st.markdown("### 1.2. DASS")
     # view_cluster_data(dass_kmeans_pretest,dass_kmeans_posttest,dass_kmeans_delta)
@@ -264,10 +232,10 @@ def clustering():
     hitung_common(dass_kmeans_posttest.iloc[:,1:],"DASS pada Posttest")
     hitung_common(dass_kmeans_delta.iloc[:,1:],"DASS pada Delta")
     st.markdown("<h3 style='text-align: center; color: system;'>Faktor DASS yang mempengaruhi hasil ujian</h3>", unsafe_allow_html=True)
-    st.markdown("**POSTTEST | Cluster 0 : 80 | Cluster 1 : 57 | Cluster 2 : 65**")
-    st.markdown("**Cluster 0**: Normal Depression, Normal Anxiety, Normal Stress, High PostTest")
-    st.markdown("**Cluster 1**: Normal Depression, Normal Anxiety, Normal Stress, Moderate PostTest")
-    st.markdown("**Cluster 2**: Normal Depression, Moderate Anxiety, Normal Stress, High PostTest")
+    st.markdown("**POSTTEST | Cluster 0 : 98 | Cluster 1 : 63 | Cluster 2 : 41**")
+    st.markdown("**Cluster 0**: Normal Depression, Mild Anxiety, Normal Stress, High PostTest")
+    st.markdown("**Cluster 1**: Mild Depression, Moderate Anxiety, Normal Stress, High PostTest")
+    st.markdown("**Cluster 2**: Normal Depression, Normal Anxiety, Normal Stress, High PostTest")
 
     st.markdown("### 1.3. ERQ")
     # view_cluster_data(erq_kmeans_pretest,erq_kmeans_posttest,erq_kmeans_delta)
@@ -275,9 +243,9 @@ def clustering():
     hitung_common(erq_kmeans_posttest.iloc[:,1:],"ERQ pada Posttest")
     hitung_common(erq_kmeans_delta.iloc[:,1:],"ERQ pada Delta")
     st.markdown("<h3 style='text-align: center; color: system;'>Faktor ERQ yang mempengaruhi hasil ujian</h3>", unsafe_allow_html=True)
-    st.markdown("**POSTTEST | Cluster 0 : 76 | Cluster 1 : 67 | Cluster 2 : 59**")
-    st.markdown("**Cluster 0**: Moderate CRF, Moderate ESF, High PostTest")
-    st.markdown("**Cluster 1**: High CRF, Moderate ESF, High PostTest")
+    st.markdown("**POSTTEST | Cluster 0 : 76 | Cluster 1 : 68 | Cluster 2 : 58**")
+    st.markdown("**Cluster 0**: High CRF, Moderate ESF, High PostTest")
+    st.markdown("**Cluster 1**: Moderate CRF, Moderate ESF, High PostTest")
     st.markdown("**Cluster 2**: Moderate CRF, Moderate ESF, Moderate PostTest")
 
     st.markdown("### 1.4. AEQ + DASS + ERQ")
@@ -289,18 +257,18 @@ def clustering():
 
     #Penjelaasan KMEANS keseluruhan 
     st.markdown("<h3 style='text-align: center; color: system;'>Ringkasan KMeans</h3>", unsafe_allow_html=True)
-    st.markdown("**PRETEST | Cluster 0 : 68 | Cluster 1 : 85 | Cluster 2 : 49**")
-    st.markdown("**Cluster 0**: Moderate Class Positive , Moderate Class Negative , Moderate Test Positive , Moderate Test Negative , Normal Depression , Mild Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PreTest")
-    st.markdown("**Cluster 1**: High Class Positive , Low Class Negative , High Test Positive , Low Test Negative , Normal Depression , Normal Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PreTest")
-    st.markdown("**Cluster 2**: High Class Positive , Low Class Negative , High Test Positive , Low Test Negative , Normal Depression , Normal Anxiety , Normal Stress , Moderate CRF , Moderate ESF , Moderate PreTest")
-    st.markdown("**POSTTEST | Cluster 0 : 68 | Cluster 1 : 85 | Cluster 2 : 49**")
+    st.markdown("**PRETEST | Cluster 0 : 95 | Cluster 1 : 65 | Cluster 2 : 42**")
+    st.markdown("**Cluster 0**: High Class Positive , Low Class Negative , High Test Positive , Low Test Negative , Normal Depression , Normal Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PreTest")
+    st.markdown("**Cluster 1**: Moderate Class Positive , Moderate Class Negative , Moderate Test Positive , Moderate Test Negative , Normal Depression , Mild Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PreTest")
+    st.markdown("**Cluster 2**: High Class Positive , Low Class Negative , High Test Positive , Low Test Negative , Normal Depression , Normal Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PreTest")
+    st.markdown("**POSTTEST | Cluster 0 : 93 | Cluster 1 : 68 | Cluster 2 : 41**")
     st.markdown("**Cluster 0**: Moderate Class Positive , Moderate Class Negative , Moderate Test Positive , Moderate Test Negative , Mild Depression , Moderate Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PostTest")
-    st.markdown("**Cluster 1**: High Class Positive , Low Class Negative , High Test Positive , Low Test Negative , Normal Depression , Normal Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PostTest")
-    st.markdown("**Cluster 2**: Moderate Class Positive , Low Class Negative , Moderate Test Positive , Low Test Negative , Normal Depression , Mild Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PostTest")
-    st.markdown("**DELTA | Cluster 0 : 52 | Cluster 1 : 69 | Cluster 2 : 81**")
-    st.markdown("**Cluster 0**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
-    st.markdown("**Cluster 1**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
-    st.markdown("**Cluster 2**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Mild Depression, Moderate Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
+    st.markdown("**Cluster 1**: High Class Positive , Moderate Class Negative , High Test Positive , Moderate Test Negative , Normal Depression , Normal Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PostTest")
+    st.markdown("**Cluster 2**: High Class Positive , Low Class Negative , High Test Positive , Low Test Negative , Normal Depression , Normal Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PostTest")
+    st.markdown("**DELTA | Cluster 0 : 92 | Cluster 1 : 69 | Cluster 2 : 41**")
+    st.markdown("**Cluster 0**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Mild Depression, Moderate Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
+    st.markdown("**Cluster 1**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
+    st.markdown("**Cluster 2**: High Class Positive, Moderate Class Negative, High Test Positive, Moderate Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
     st.markdown("<hr></hr><hr></hr>", unsafe_allow_html=True)
 
     
@@ -308,13 +276,13 @@ def clustering():
     st.markdown("### 2.1. AEQ")
     # view_cluster_data(aeq_gaussian_pretest,aeq_gaussian_posttest,aeq_gaussian_delta)
     hitung_common(aeq_gaussian_pretest.iloc[:,1:],"AEQ pada Pretest")
-    hitung_common(aeq_gaussian_posttest.iloc[:,1:],"AEQ-Gaussia pada osttest")
+    hitung_common(aeq_gaussian_posttest.iloc[:,1:],"AEQ-Gaussia pada Posttest")
     hitung_common(aeq_gaussian_delta.iloc[:,1:],"AEQ pada Delta")
     st.markdown("<h3 style='text-align: center; color: system;'>Faktor AEQ yang mempengaruhi hasil ujian</h3>", unsafe_allow_html=True)
-    st.markdown("**POSTTEST | Cluster 0 : 46 | Cluster 1 : 88 | Cluster 2 : 68**")
-    st.markdown("**Cluster 0**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, High PostTest")
+    st.markdown("**POSTTEST | Cluster 0 : 101 | Cluster 1 : 63 | Cluster 2 : 38**")
+    st.markdown("**Cluster 0**: High Class Positive, Moderate Class Negative, High Test Positive, Moderate Test Negative, High PostTest")
     st.markdown("**Cluster 1**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, High PostTest")
-    st.markdown("**Cluster 2**: High Class Positive, Moderate Class Negative, High Test Positive, Moderate Test Negative, High PostTest")
+    st.markdown("**Cluster 2**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, High PostTest")
 
     st.markdown("### 2.2. DASS")
     # view_cluster_data(dass_gaussian_pretest,dass_gaussian_posttest,dass_gaussian_delta)
@@ -322,10 +290,10 @@ def clustering():
     hitung_common(dass_gaussian_posttest.iloc[:,1:],"DASS pada Posttest")
     hitung_common(dass_gaussian_delta.iloc[:,1:],"DASS pada Delta")
     st.markdown("<h3 style='text-align: center; color: system;'>Faktor DASS yang mempengaruhi hasil ujian</h3>", unsafe_allow_html=True)
-    st.markdown("**POSTTEST | Cluster 0 : 36 | Cluster 1 : 106 | Cluster 2 : 58**")
-    st.markdown("**Cluster 0**: Mild Depression, Moderate Anxiety, Normal Stress, High PostTest")
+    st.markdown("**POSTTEST | Cluster 0 : 109 | Cluster 1 : 69 | Cluster 2 : 24**")
+    st.markdown("**Cluster 0**: Normal Depression, Moderate Anxiety, Normal Stress, High PostTest")
     st.markdown("**Cluster 1**: Normal Depression, Normal Anxiety, Normal Stress, High PostTest")
-    st.markdown("**Cluster 2**: Normal Depression, Normal Anxiety, Normal Stress, Moderate PostTest")
+    st.markdown("**Cluster 2**: Moderate Depression, Severe Anxiety, Mild Stress, High PostTest")
 
     st.markdown("### 2.3. ERQ")
     # view_cluster_data(erq_gaussian_pretest,erq_gaussian_posttest,erq_gaussian_delta)
@@ -333,10 +301,10 @@ def clustering():
     hitung_common(erq_gaussian_posttest.iloc[:,1:],"ERQ pada Posttest")
     hitung_common(erq_gaussian_delta.iloc[:,1:],"ERQ pada Delta")
     st.markdown("<h3 style='text-align: center; color: system;'>Faktor ERQ yang mempengaruhi hasil ujian</h3>", unsafe_allow_html=True)
-    st.markdown("**POSTTEST | Cluster 0 : 40 | Cluster 1 : 108 | Cluster 2 : 54**")
+    st.markdown("**POSTTEST | Cluster 0 : 47 | Cluster 1 : 77 | Cluster 2 : 78**")
     st.markdown("**Cluster 0**: Moderate CRF, Moderate ESF, Moderate PostTest")
-    st.markdown("**Cluster 1**: Moderate CRF, Moderate ESF, High PostTest")
-    st.markdown("**Cluster 2**: High CRF, Moderate ESF, High PostTest")
+    st.markdown("**Cluster 1**: High CRF, Moderate ESF, High PostTest")
+    st.markdown("**Cluster 2**: Moderate CRF, Moderate ESF, High PostTest")
 
     st.markdown("### 2.4. AEQ + DASS + ERQ")
     # view_cluster_data(ade_gaussian_pretest,ade_gaussian_posttest,ade_gaussian_delta)
@@ -347,18 +315,18 @@ def clustering():
     # st.markdown("#### Ringkasan")
     #Penjelaasan Gaussian keseluruhan 
     st.markdown("<h3 style='text-align: center; color: system;'>Ringkasan Gaussian Mixture</h3>", unsafe_allow_html=True)
-    st.markdown("**PRETEST | Cluster 0 : 62 | Cluster 1 : 89 | Cluster 2 : 51**")
+    st.markdown("**PRETEST | Cluster 0 : 76 | Cluster 1 : 36 | Cluster 2 : 90**")
     st.markdown("**Cluster 0**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Normal Depression, Mild Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PreTest")
-    st.markdown("**Cluster 1**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PreTest")
+    st.markdown("**Cluster 1**: Moderate Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PreTest")
     st.markdown("**Cluster 2**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Moderate PreTest")
-    st.markdown("**POSTTEST | Cluster 0 : 55 | Cluster 1 : 89 | Cluster 2 : 58**")
-    st.markdown("**Cluster 0**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Moderate PostTest")
+    st.markdown("**POSTTEST | Cluster 0 : 29 | Cluster 1 : 117 | Cluster 2 : 56**")
+    st.markdown("**Cluster 0**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Moderate Depression, Moderate Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
     st.markdown("**Cluster 1**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
-    st.markdown("**Cluster 2**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Mild Depression, Moderate Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
-    st.markdown("**DELTA | Cluster 0 : 49 | Cluster 1 : 81 | Cluster 2 : 72**")
-    st.markdown("**Cluster 0**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Negative Delta")
-    st.markdown("**Cluster 1**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
-    st.markdown("**Cluster 2**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Mild Depression, Moderate Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
+    st.markdown("**Cluster 2**: Moderate Class Positive, Low Class Negative, Moderate Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
+    st.markdown("**DELTA | Cluster 0 : 77 | Cluster 1 : 36 | Cluster 2 : 89**")
+    st.markdown("**Cluster 0**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Mild Depression, Moderate Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
+    st.markdown("**Cluster 1**: Moderate Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
+    st.markdown("**Cluster 2**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
     st.markdown("<hr></hr><hr></hr>", unsafe_allow_html=True)
    
     st.markdown("## 3. Algortima Fuzzy CMeans")
@@ -368,8 +336,8 @@ def clustering():
     hitung_common(aeq_fuzzy_posttest.iloc[:,1:],"AEQ pada Posttest")
     hitung_common(aeq_fuzzy_delta.iloc[:,1:],"AEQ pada Delta")
     st.markdown("<h3 style='text-align: center; color: system;'>Faktor AEQ yang mempengaruhi hasil ujian</h3>", unsafe_allow_html=True)
-    st.markdown("**POSTTEST | Cluster 0 : 65 | Cluster 1 : 63 | Cluster 2 : 74**")
-    st.markdown("**Cluster 0**: Moderate Class Positive, Low Class Negative, Moderate Test Positive, Low Test Negative, High PostTest")
+    st.markdown("**POSTTEST | Cluster 0 : 85 | Cluster 1 : 51 | Cluster 2 : 66**")
+    st.markdown("**Cluster 0**: High Class Positive, Moderate Class Negative, High Test Positive, Moderate Test Negative, High PostTest")
     st.markdown("**Cluster 1**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, High PostTest")
     st.markdown("**Cluster 2**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, High PostTest")
 
@@ -379,10 +347,10 @@ def clustering():
     hitung_common(dass_fuzzy_posttest.iloc[:,1:],"DASS pada Posttest")
     hitung_common(dass_fuzzy_delta.iloc[:,1:],"DASS pada Delta")
     st.markdown("<h3 style='text-align: center; color: system;'>Faktor DASS yang mempengaruhi hasil ujian</h3>", unsafe_allow_html=True)
-    st.markdown("**POSTTEST | Cluster 0 : 76 | Cluster 1 : 57 | Cluster 2 : 69**")
-    st.markdown("**Cluster 0**: Normal Depression, Normal Anxiety, Normal Stress, High PostTest")
-    st.markdown("**Cluster 1**: Normal Depression, Normal Anxiety, Normal Stress, Moderate PostTest")
-    st.markdown("**Cluster 2**: Normal Depression, Moderate Anxiety, Normal Stress, High PostTest")
+    st.markdown("**POSTTEST | Cluster 0 : 91 | Cluster 1 : 63 | Cluster 2 : 48**")
+    st.markdown("**Cluster 0**: Normal Depression, Mild Anxiety, Normal Stress, High PostTest")
+    st.markdown("**Cluster 1**: Normal Depression, Normal Anxiety, Normal Stress, High PostTest")
+    st.markdown("**Cluster 2**: Mild Depression, Moderate Anxiety, Normal Stress, High PostTest")
 
     st.markdown("### 3.3. ERQ")
     # view_cluster_data(erq_fuzzy_pretest,erq_fuzzy_posttest,erq_fuzzy_delta)
@@ -390,9 +358,9 @@ def clustering():
     hitung_common(erq_fuzzy_posttest.iloc[:,1:],"ERQ pada Posttest")
     hitung_common(erq_fuzzy_delta.iloc[:,1:],"ERQ pada Delta")
     st.markdown("<h3 style='text-align: center; color: system;'>Faktor ERQ yang mempengaruhi hasil ujian</h3>", unsafe_allow_html=True)
-    st.markdown("**POSTTEST | Cluster 0 : 84 | Cluster 1 : 47 | Cluster 2 : 71**")
-    st.markdown("**Cluster 0**: Moderate CRF, Moderate ESF, High PostTest")
-    st.markdown("**Cluster 1**: Moderate CRF, Moderate ESF, Moderate PostTest")
+    st.markdown("**POSTTEST | Cluster 0 : 57 | Cluster 1 : 73 | Cluster 2 : 72**")
+    st.markdown("**Cluster 0**: Moderate CRF, Moderate ESF, Moderate PostTest")
+    st.markdown("**Cluster 1**: Moderate CRF, Moderate ESF, High PostTest")
     st.markdown("**Cluster 2**: High CRF, Moderate ESF, High PostTest")
 
     st.markdown("### 3.4. AEQ + DASS + ERQ")
@@ -403,18 +371,18 @@ def clustering():
     hitung_common(ade_fuzzy_delta.iloc[:,1:],"menggunakan Fuzzy CMeans pada Delta")
     #Penjelaasan Fuzzy CMeans keseluruhan 
     st.markdown("<h3 style='text-align: center; color: system;'>Ringkasan Fuzzy CMeans</h3>", unsafe_allow_html=True)
-    st.markdown("**PRETEST | Cluster 0 : 62 | Cluster 1 : 89 | Cluster 2 : 51**")
-    st.markdown("**Cluster 0**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PreTest")
+    st.markdown("**PRETEST | Cluster 0 : 89 | Cluster 1 : 48 | Cluster 2 : 65**")
+    st.markdown("**Cluster 0**: High Class Positive, Moderate Class Negative, High Test Positive, Moderate Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PreTest")
     st.markdown("**Cluster 1**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Normal Depression, Mild Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PreTest")
-    st.markdown("**Cluster 2**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Moderate PreTest")
-    st.markdown("**POSTTEST | Cluster 0 : 55 | Cluster 1 : 89 | Cluster 2 : 58**")
-    st.markdown("**Cluster 0**: Moderate Class Positive, Low Class Negative, Moderate Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
+    st.markdown("**Cluster 2**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PreTest")
+    st.markdown("**POSTTEST | Cluster 0 : 89 | Cluster 1 : 48 | Cluster 2 : 65**")
+    st.markdown("**Cluster 0**: High Class Positive, Moderate Class Negative, High Test Positive, Moderate Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
     st.markdown("**Cluster 1**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Mild Depression, Moderate Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
     st.markdown("**Cluster 2**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
-    st.markdown("**DELTA | Cluster 0 : 49 | Cluster 1 : 81 | Cluster 2 : 72**")
-    st.markdown("**Cluster 0**: High Class Positive, Moderate Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
+    st.markdown("**DELTA | Cluster 0 : 89 | Cluster 1 : 48 | Cluster 2 : 65**")
+    st.markdown("**Cluster 0**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
     st.markdown("**Cluster 1**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Mild Depression, Moderate Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
-    st.markdown("**Cluster 2**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
+    st.markdown("**Cluster 2**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Negative Delta")
     st.markdown("<hr></hr><hr></hr>", unsafe_allow_html=True)
     # st.markdown("## 4. Algortima KModes")
     # st.markdown("### 4.1. AEQ")
@@ -444,45 +412,32 @@ def clustering():
     st.markdown("<h3 style='text-align: center; color: system;'>Ringkasan Keseluruhan</h3>", unsafe_allow_html=True)
     st.markdown("Tiga cluster yang dibentuk dengan KMeans, Gaussian Mixture, Fuzzy CMeans terhadap AEQ, DASS dan ERQ digunakan untuk melakukan karakterisasi mahasiswa berdasarkan pola faktor afektif nya terhadap hasil ujian")
     st.markdown("<h4>Dalam KMeans, berikut merupakan faktor afektif yang mempengaruhi nilai ujian mahasiswa:</h4>", unsafe_allow_html=True)
-    st.markdown("**Cluster 0 : 68 | Cluster 1 : 85 | Cluster 2 : 49**")
+    st.markdown("**Cluster 0 : 93 | Cluster 1 : 68 | Cluster 2 : 41**")
     st.markdown("**Cluster 0**: Moderate Class Positive , Moderate Class Negative , Moderate Test Positive , Moderate Test Negative , Mild Depression , Moderate Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PostTest")
-    st.markdown("**Cluster 1**: High Class Positive , Low Class Negative , High Test Positive , Low Test Negative , Normal Depression , Normal Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PostTest")
-    st.markdown("**Cluster 2**: Moderate Class Positive , Low Class Negative , Moderate Test Positive , Low Test Negative , Normal Depression , Mild Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PostTest")
+    st.markdown("**Cluster 1**: High Class Positive , Moderate Class Negative , High Test Positive , Moderate Test Negative , Normal Depression , Normal Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PostTest")
+    st.markdown("**Cluster 2**: High Class Positive , Low Class Negative , High Test Positive , Low Test Negative , Normal Depression , Normal Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PostTest")
     st.markdown("<h4>Dalam Gaussian Mixture, berikut merupakan faktor afektif yang mempengaruhi nilai ujian mahasiswa:</h4>", unsafe_allow_html=True)
-    st.markdown("**Cluster 0 : 55 | Cluster 1 : 89 | Cluster 2 : 58**")
-    st.markdown("**Cluster 0**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Moderate PostTest")
+    st.markdown("**Cluster 0 : 29 | Cluster 1 : 117 | Cluster 2 : 56**")
+    st.markdown("**Cluster 0**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Moderate Depression, Moderate Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
     st.markdown("**Cluster 1**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
-    st.markdown("**Cluster 2**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Mild Depression, Moderate Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
+    st.markdown("**Cluster 2**: Moderate Class Positive, Low Class Negative, Moderate Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
     st.markdown("<h4>Dalam Fuzzy CMeans, berikut merupakan faktor afektif yang mempengaruhi nilai ujian mahasiswa:</h4>", unsafe_allow_html=True)
-    st.markdown("**Cluster 0 : 55 | Cluster 1 : 89 | Cluster 2 : 58**")
-    st.markdown("**Cluster 0**: Moderate Class Positive, Low Class Negative, Moderate Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
+    st.markdown("**Cluster 0 : 89 | Cluster 1 : 48 | Cluster 2 : 65**")
+    st.markdown("**Cluster 0**: High Class Positive, Moderate Class Negative, High Test Positive, Moderate Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
     st.markdown("**Cluster 1**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Mild Depression, Moderate Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
     st.markdown("**Cluster 2**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
-
-    # st.markdown("**PRETEST**")
-    # st.markdown("**Cluster 0**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Normal Depression, Mild Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PreTest ")
-    # st.markdown("**Cluster 1**: High Class Positive, Low Class Negative, High Test Positive, Low Test_Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PreTest")
-    # st.markdown("**Cluster 2**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Moderate PreTest")
-    # st.markdown("**POSTTEST**")
-    # st.markdown("**Cluster 0**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Mild Depression, Moderate Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
-    # st.markdown("**Cluster 1**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, High PostTest")
-    # st.markdown("**Culster 2**: Moderate Class Positive , Low Class Negative , Moderate Test Positive , Low Test Negative , Normal Depression , Mild Anxiety , Normal Stress , Moderate CRF , Moderate ESF , High PostTest ")
-    # st.markdown("**DELTA**")
-    # st.markdown("**Cluster 0**: Moderate Class Positive, Low Class Negative, Moderate Test Positive, Low Test Negative, Normal Depression, Mild Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
-    # st.markdown("**Cluster 1**: Moderate Class Positive, Moderate Class Negative, Moderate Test Positive, Moderate Test Negative, Mild Depression, Moderate Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
-    # st.markdown("**Cluster 2**: High Class Positive, Low Class Negative, High Test Positive, Low Test Negative, Normal Depression, Normal Anxiety, Normal Stress, Moderate CRF, Moderate ESF, Positive Delta")
+   
     st.markdown("<hr></hr><hr></hr>", unsafe_allow_html=True)
     st.markdown("<hr></hr><hr></hr>", unsafe_allow_html=True)
 
     st.markdown("## 4. Evaluasi Silhouette Score")
     st.markdown("### 4.1. AEQ Silhouette Score")
     bar_silhouette(aeq_sil)
-    st.write('''Bruh moment''')
     st.markdown("### 4.2. DASS Silhouette Score")
     bar_silhouette(dass_sil)
     st.markdown("### 4.3. ERQ Silhouette Score")
     bar_silhouette(erq_sil)
-    st.markdown('''Pada visualisasi diatas, didapatkan hasil performa ketiga algoritma terhadap silhouette score dalam melakukan clustering pada AEQ, DASS dan ERQ dengan masing - masing hasilnya yang bervariasi.
+    st.markdown('''Pada ketiga visualisasi diatas, didapatkan hasil performa ketiga algoritma terhadap silhouette score dalam melakukan clustering pada AEQ, DASS dan ERQ dengan masing - masing hasilnya yang bervariasi.
 1. Penjabaran pada AEQ
 Faktor Class Positive diperoleh nilai tertinggi nya oleh KMeans, Faktor Class Negative diperoleh tertinggi oleh Gaussian Mixture, Faktor Test Positive diperoleh nilai tertinggi oleh Gaussian Mixture dan pada Test Negative diperoleh nilai tertinggi oleh Fuzzy CMeans
 
