@@ -206,6 +206,7 @@ def asosiasi():
 
     st.markdown("<hr></hr>", unsafe_allow_html=True)
     # Visualisasi perbadngindan consequent pada pretest, posttest dan delta
+    st.markdown("##### Frekuensi consequent/RHS yang sering muncul")
     bar_fp_vis = alt.Chart(fp_vis).mark_bar().encode(
         x=alt.X('Consequents', type='nominal', sort=None),y='counts',tooltip=['Consequents', 'counts']).configure_mark(color='#ff7f0e').properties(width=800,height=600).interactive()
     st.altair_chart(bar_fp_vis)
@@ -213,6 +214,7 @@ def asosiasi():
 
     st.markdown("<hr></hr>", unsafe_allow_html=True)
     # Scatter plot relasi Support dan Confidence
+    st.markdown("##### Hubungan antara Support dan Confidence")    
     scatter_fp_com  = alt.Chart(fp_combination).mark_point().encode(x=alt.X('Support',scale=alt.Scale(zero=False)), y=alt.Y('Confidence',scale=alt.Scale(zero=False)),color=alt.Color('Lift:Q', scale=alt.Scale(scheme='oranges')),tooltip=['Antecedents','Consequents','Support', 'Confidence','Lift']).properties(width=800,height=600).interactive()
     st.altair_chart(scatter_fp_com)
     st.markdown("##### Penjelasan:")
@@ -267,19 +269,25 @@ def asosiasi():
         y='rule_count',
         color='Method',tooltip=["supp","conf","lift","elapsed_time","rule_count"]
     ).properties(width=500,height=500).interactive()
+    st.write("Perbandingan Rule yang diperoleh dengan Support yang Berbeda")
     st.altair_chart(line_supp_cmp)
+    
     line_conf_cmp = alt.Chart(df_conf_cmp).mark_line(point=alt.OverlayMarkDef(color="red")).encode(
         x='conf',
         y='rule_count',
         color='Method',tooltip=["supp","conf","lift","elapsed_time","rule_count"]
     ).properties(width=500,height=500).interactive()
+    st.write("Perbandingan Rule yang diperoleh dengan Confidence yang Berbeda")
     st.altair_chart(line_conf_cmp)
+
     line_lift_cmp = alt.Chart(df_lift_cmp).mark_line(point=alt.OverlayMarkDef(color="red")).encode(
         x='lift',
         y='rule_count',
         color='Method',tooltip=["supp","conf","lift","elapsed_time","rule_count"]
     ).properties(width=500,height=500).interactive()
+    st.write("Perbandingan Rule yang diperoleh dengan Lift yang Berbeda")
     st.altair_chart(line_lift_cmp)
+    
     st.markdown("##### Penjelasan:")
     st.markdown("""Tampilan diatas menunjukan perbandingan rule yang diperoleh ketika support, confidence dan lift memiliki nilai yang berbeda. 
     Terlihat bahwa pada algoritma FP-Growth rule yang diperoleh jauh lebih banyak dibandingkan Apriori, selain itu pada FP-Growth semakin rendah nilai
