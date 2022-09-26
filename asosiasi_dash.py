@@ -290,8 +290,6 @@ def asosiasi():
     
     st.markdown("##### Penjelasan:")
     st.markdown("""Tampilan diatas menunjukan perbandingan rule yang diperoleh ketika support, confidence dan lift memiliki nilai yang berbeda. 
-    Terlihat bahwa pada algoritma FP-Growth rule yang diperoleh jauh lebih banyak dibandingkan Apriori, selain itu pada FP-Growth semakin rendah nilai
-    parameternya semakin banyak rule yang diperoleh. Pada algoritma apriori untuk lift dan support yang berbeda hasil rulenya relatif stagnan dan tidak 
-    ada perubahan, hanya pada confidence yang berbeda baru terdapat perbedaan jumlah rule meskipun tidak begitu signifikan.""")
+    Terlihat bahwa jumlah rule yang dihasilkan tidak berbeda jauh dan terlihat overlapping antara FP-Growth dan Apriori dimana perbedaannya tidak lebih dari 100.""")
     st.markdown("<hr></hr>", unsafe_allow_html=True)
     ################################################################################################################
