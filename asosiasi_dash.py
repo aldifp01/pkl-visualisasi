@@ -248,7 +248,19 @@ def asosiasi():
     st.markdown("""Tampilan diatas menunjukan perbandingan jumlah rule yang diperoleh dari algoritma Apriori dengan FP-Growth. Dengan menggunakan nilai support, 
     confidence dan lift yang sama maka diperoleh jumlah rule yang sama.""")
     
+    
     st.markdown("<hr></hr>", unsafe_allow_html=True)
+    df_supp_cmp=df_supp_cmp.set_index(df_supp_cmp.columns[0])
+    df_conf_cmp=df_conf_cmp.set_index(df_conf_cmp.columns[0])
+    df_lift_cmp=df_lift_cmp.set_index(df_lift_cmp.columns[0])
+    st.write("Perbandingan Rule yang diperoleh dengan Support yang Berbeda")
+    st.write(df_supp_cmp)
+    st.write("Perbandingan Rule yang diperoleh dengan Confidence yang Berbeda")
+    st.write(df_conf_cmp)
+    st.write("Perbandingan Rule yang diperoleh dengan Lift yang Berbeda")
+    st.write(df_lift_cmp)
+
+    
     st.markdown("##### Perbandingan Rule yang diperoleh pada support,confidence, dan lift yang berbeda")
     line_supp_cmp = alt.Chart(df_supp_cmp).mark_line(point=alt.OverlayMarkDef(color="red")).encode(
         x='supp',

@@ -71,7 +71,7 @@ def main_page():
     st.markdown("## Dataset")
     st.write('''- Terdiri dari 4 instrumen:\n
     1. Achievement Emotion Questionnaire (AEQ-s)\n
-    \tDibagi menjadi Class-Related Emotions dan Test-Related Emotions\n
+    \tDibagi menjadi Class-Related Emotions dan Learning-Related Emotions\n
     \tMasing-masing mengevaluasi emosi positif dan emosi negatif
     2. Depression, Anxiety, and Stress Scale (DASS-21)\n
     3. Emotion Regulation Questionnaire (ERQ)\n
@@ -103,6 +103,7 @@ def main_page():
         tooltip=['Angkatan','Jumlah']
     )
     st.altair_chart(pie_angk)
+    st.write('''Pada visualisasi di atas, diketahui bahwa partisipan atau responden terdiri dari mahasiswa Fakultas Ilmu Komputer Universitas Brawijaya angkatan 17 hingga 21. Partisipan didominasi oleh mahasiswa angkatan 20. Sedangkan angkatan 17 merupakan partisipan dengan jumlah paling sedikit.''')
 
 
     ### Persentase Kelas ###
@@ -130,6 +131,7 @@ def main_page():
         tooltip=['Mata Kuliah','Jumlah']
     )
     st.altair_chart(pie_matakuliah)
+    st.write('''Pada visualisasi di atas, diketahui bahwa data tersebar dengan cukup baik. Hal ini dapat dilihat pada proporsi setiap kelas mata kuliah yang tidak terlalu sedikit dan tidak terlalu banyak. Untuk kelas yang lebih mendominasi kontribusi proyek ada pada kelas ADSI dan IESI.''')
 
     st.markdown("<hr></hr>", unsafe_allow_html=True)
 
@@ -157,8 +159,11 @@ def main_page():
     # plotting
     st.markdown("#### Persebaran Data - Emosi Positif")
     bar_plot(aeq_count_pos, cat3)
+    st.write('''Pada visualisasi di atas, diketahui bahwa mahasiswa cenderung memiliki emosi positif yang tinggi. Hal ini dapat diketahui dari jumlah data pada kategori high yang lebih banyak daripada dua kategori lainnya. Hal ini baik karena dapat diartikan dengan mahasiswa cenderung memiliki emosi positif saat di kelas dan saat pembelajaran berlangsung.''')
     st.markdown("#### Persebaran Data - Emosi Negatif")
     bar_plot(aeq_count_neg, cat3)
+    st.write('''Pada visualisasi di atas, diketahui bahwa mahasiswa cenderung memiliki emosi negatif yang rendah. Hal ini dapat diketahui dari jumlah data pada kategori low yang lebih banyak daripada dua kategori lainya. Hal ini baik karena dapat diartikan dengan mahasiswa cenderung memiliki emosi positif saat di kelas dan saat pembelajaran berlangsung.''')
+
 
     st.markdown("<hr></hr>", unsafe_allow_html=True)
 
@@ -176,6 +181,8 @@ def main_page():
     # plotting
     bar_plot(dass_count, cat5)
 
+    st.write('''Pada visualisasi di atas, diketahui bahwa mahasiswa cenderung memiliki emosi yang positif. Sifat kuesioner DASS adalah mengukur emosi negatif, sehingga dapat diketahui bahwa mahasiswa sebagian besar memiliki emosi negatif yang normal. Mahasiswa dengan emosi negatif pada kategori mild ke atas cenderung lebih sedikit. ''')
+
     st.markdown("<hr></hr>", unsafe_allow_html=True)
 
 
@@ -191,6 +198,8 @@ def main_page():
 
     # plotting
     bar_plot(erq_count, cat3)
+
+    st.write('''Pada visualisasi di atas, diketahui bahwa mahasiswa memiliki proporsi emosi positif dan negatif yang seimbang. Hal ini diketahui dari jumlah data pada kategori moderate yang dominan daripada dua kategoi yang lain. Sedangkan kategori high dan low cenderung sedikit.''')
 
     st.markdown("<hr></hr>", unsafe_allow_html=True)
 
@@ -232,6 +241,8 @@ def main_page():
         ).properties(width=130).interactive()
     st.altair_chart(bar_count_nilai)
 
+    st.write('''Pada visualisasi di atas, diketahui bahwa mahasiswa yang sudah memahami materi HTML dan CSS sebelum menggunakan platform HSS Learning sudah cukup banyak. Hal ini dapat dilihat pada jumlah data kategori high nilai pre-test yang sudah banyak. Kemudian, setelah menggunakan platform HSS Learning, pengetahuan mahasiswa cenderung terjadi peningkatan sehingga jumlah data kategori high nilai post-test lebih banyak daripada pre-test. Terdapat sejumlah mahasiswa yang tergolong dalam kategori moderate dan bahkan low. Namun, tidak ada mahasiswa yang tergolong dalam kategori low pada nilai post-test.''')
+
 
     ### Delta ###
     st.markdown("#### Persebaran Data - Perubahan Nilai (Delta)")
@@ -256,4 +267,6 @@ def main_page():
         y='Jumlah', color='Label', tooltip=['Regulasi','Label','Jumlah']
         ).properties(width=400).interactive()
     st.altair_chart(bar_count_delta)
+
+    st.write('''Pada visualisasi di atas, diketahui bahwa perubahan nilai (delta) mahasiswa lebih banyak bersifat positif. Delta positif menandakan adanya peningkatan nilai atau setidaknya mahasiswa dapat mempertahankan nilainya setelah menggunakan platform HSS Learning. Sebaliknya, delta negatif menandakan adanya penurunan nilai setelah menggunakan platform HSS Learning. Dengan demikian, dapat disimpulkan bahwa setelah menggunakan platform ini, perubahan nilai mahasiswa cenderung bersifat positif.''')
 

@@ -61,32 +61,23 @@ def delete_postfix_nilai(df):
 def klasifikasi():
     # Read Dataframe
     ## Classficcation Report 
-    acc_aeq = pd.read_excel('klasifikasi/classification_report.xlsx', sheet_name='aeq')
-    acc_dass = pd.read_excel('klasifikasi/classification_report.xlsx', sheet_name='dass')
-    acc_erq = pd.read_excel('klasifikasi/classification_report.xlsx', sheet_name='erq')
-    acc_ne = pd.read_excel('klasifikasi/classification_report.xlsx', sheet_name='nilai_emosi')
-    acc_ce = pd.read_excel('klasifikasi/classification_report.xlsx', sheet_name='class_emosi')
+    acc_ne_def = pd.read_excel('klasifikasi/classification_report.xlsx', sheet_name='nilai_emosi')
+    acc_ce_def = pd.read_excel('klasifikasi/classification_report.xlsx', sheet_name='class_emosi')
+    acc_ne_tun = pd.read_excel('klasifikasi/classification_report.xlsx', sheet_name='nilai_emosi_htuning')
+    cr_ne_tun = pd.read_excel('klasifikasi/classification_report.xlsx', sheet_name='cr_algorithm')
 
     ## Confusion Matrix Report
-    cm_aeq_NB = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='aeq_NB')
-    cm_aeq_SVM = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='aeq_SVM')
-    cm_aeq_KNN = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='aeq_KNN')
+    cm_ne_def_NB = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ne_def_NB')
+    cm_ne_def_SVM = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ne_def_SVM')
+    cm_ne_def_KNN = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ne_def_KNN')
 
-    cm_dass_NB = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='dass_NB')
-    cm_dass_SVM = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='dass_SVM')
-    cm_dass_KNN = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='dass_KNN')
+    cm_ce_def_NB = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ce_def_NB')
+    cm_ce_def_SVM = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ce_def_SVM')
+    cm_ce_def_KNN = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ce_def_KNN')
 
-    cm_erq_NB = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='erq_NB')
-    cm_erq_SVM = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='erq_SVM')
-    cm_erq_KNN = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='erq_KNN')
-
-    cm_ne_NB = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ne_NB')
-    cm_ne_SVM = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ne_SVM')
-    cm_ne_KNN = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ne_KNN')
-
-    cm_ce_NB = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ce_NB')
-    cm_ce_SVM = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ce_SVM')
-    cm_ce_KNN = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ce_KNN')
+    cm_ne_tun_NB = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ne_NB')
+    cm_ne_tun_SVM = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ne_SVM')
+    cm_ne_tun_KNN = pd.read_excel('klasifikasi/confmatrix_report.xlsx', sheet_name='ne_KNN')
 
 
     # st.markdown("# Klasifikasi")
@@ -100,89 +91,89 @@ def klasifikasi():
     st.markdown("<hr></hr>", unsafe_allow_html=True)
 
 
-    ########### AEQ ############
-    st.markdown("## 1. Achievement Emotion Questionnaire (AEQ-s)")
-    st.markdown("#### Akurasi Model")
-
-    # st.write(acc_aeq)
-    acc_bar_plot(acc_aeq)
-    st.write('''Pada visualisasi di atas, diketahui bahwa ketiga algoritma dapat mengklasifikasikan data AEQ dengan sangat baik. Hal ini dapat dilihat dari akurasi yang ditunjukkan diagram batang, di mana setidaknya akurasi berada di atas 90% bahkan mencapai 100% pada algoritma Support Vector Machine. Bagian Summary menunjukkan rata-rata akurasi algoritma terhadap data AEQ. Dari ketiga algoritma klasifikasi yang digunakan, diketahui bahwa Support Vector Machine memiliki akurasi yang paling tinggi dibandingkan dengan dua algoritma lainnya.''')
-    
-    st.markdown("#### Confusion Matrix")
-    view_conf_matrix(cm_aeq_NB, cm_aeq_SVM, cm_aeq_KNN)
-    st.markdown("<hr></hr>", unsafe_allow_html=True)
-
-
-    ########### DASS ############
-    st.markdown("## 2. Depression, Anxiety, and Stress Scale (DASS-21)")
-    st.markdown("#### Akurasi Model")
-
-    # st.write(acc_dass)
-    acc_bar_plot(acc_dass)
-    st.write('''Pada visualisasi di atas, diketahui bahwa ketiga algoritma dapat mengklasifikasikan data DASS dengan sangat baik. Namun, tidak cukup baik pada regulasi emosi Anxiety dimana algoritma Naive Bayes dan K-Nearest Neighbor mengalami penurunan akurasi yang cukup banyak. Bagian Summary menunjukkan rata-rata akurasi algoritma terhadap data DASS. Dari ketiga algoritma klasifikasi yang digunakan, diketahui bahwa Support Vector Machine memiliki akurasi yang paling tinggi dibandingkan dengan dua algoritma lainnya.''')
-
-    st.markdown("#### Confusion Matrix")
-    view_conf_matrix(cm_dass_NB, cm_dass_SVM, cm_dass_KNN)
-    st.markdown("<hr></hr>", unsafe_allow_html=True)
-
-
-    ########### ERQ ############
-    st.markdown("## 3. Emotion Regulation Questionnaire (ERQ)")
-    st.markdown("#### Akurasi Model")
-
-    # st.write(acc_erq)
-    acc_bar_plot(acc_erq)
-    st.write('''Pada visualisasi di atas, diketahui bahwa ketiga algoritma dapat mengklasifikasikan data ERQ dengan sangat baik. Hal ini dapat dilihat dari akurasi yang ditunjukkan diagram batang, di mana setidaknya akurasi berada di atas 90% bahkan mencapai 100% pada algoritma Support Vector Machine. Bagian Summary menunjukkan rata-rata akurasi algoritma terhadap data ERQ. Dari ketiga algoritma klasifikasi yang digunakan, diketahui bahwa Support Vector Machine memiliki akurasi yang paling tinggi dibandingkan dengan dua algoritma lainnya. Algoritma Support Vector Machine dapat mengkalsifikasikan data ERQ dengan sempurna, sehingga didapatkan akurasi sebesar 100%.''')
-
-    st.markdown("#### Confusion Matrix")
-    view_conf_matrix(cm_erq_NB, cm_erq_SVM, cm_erq_KNN)
-    st.markdown("<hr></hr>", unsafe_allow_html=True)
-
-
     ########### Nilai Emosi ############
-    st.markdown("## 4. Nilai (1)")
+    st.markdown("## 1. Klasifikasi Nilai (1)")
     st.markdown("Berdasarkan nilai emosi")
     st.markdown("#### Akurasi Model")
 
-    # st.write(acc_ne)
-    acc_bar_plot(acc_ne)
-    st.write('''Pada visualisasi di atas, diketahui bahwa ketiga algoritma dapat mengklasifikasikan data Nilai Emosi dengan cukup baik namun rendah pada algoritma Naive Bayes. Hal ini dapat dilihat dari akurasi yang ditunjukkan diagram batang, di mana setidaknya akurasi berada di atas 80% selain algoritma Naive Bayes. Bagian Summary menunjukkan rata-rata akurasi algoritma terhadap data Nilai Emosi. Dari ketiga algoritma klasifikasi yang digunakan, diketahui bahwa K-Nearest memiliki akurasi yang paling tinggi dibandingkan dengan dua algoritma lainnya, namun hanya berbeda sedikit dengan Support Vector Machine.''')
+    # st.write(acc_ne_def)
+    acc_bar_plot(acc_ne_def)
+    st.write('''Pada visualisasi di atas, diketahui bahwa algoritma yang dapat mengklasifikasi data Nilai Emosi dengan cukup baik hanyalah Support Vector Machine. Hal ini dapat dilihat dari akurasi yang ditunjukkan diagram batang, di mana akurasi Support Vector Machine berada mendekati 80% dan di atas 90%, sedangkan Naive Bayes dan K-Nearest Neighbor hanya di bawah 80%.''')
 
-    st.markdown("### Confusion Matrix")
-    cm_ne_NB['Class'] = delete_postfix_nilai(cm_ne_NB)
-    cm_ne_SVM['Class'] = delete_postfix_nilai(cm_ne_SVM)
-    cm_ne_KNN['Class'] = delete_postfix_nilai(cm_ne_KNN)
-    view_conf_matrix(cm_ne_NB, cm_ne_SVM, cm_ne_KNN)
+    st.markdown("#### Confusion Matrix")
+    cm_ne_def_NB['Class'] = delete_postfix_nilai(cm_ne_def_NB)
+    cm_ne_def_SVM['Class'] = delete_postfix_nilai(cm_ne_def_SVM)
+    cm_ne_def_KNN['Class'] = delete_postfix_nilai(cm_ne_def_KNN)
+    view_conf_matrix(cm_ne_def_NB, cm_ne_def_SVM, cm_ne_def_KNN)
     st.markdown("<hr></hr>", unsafe_allow_html=True)
 
 
     ########### Klasifikasi Emosi ############
-    st.markdown("## 5. Nilai (2)")
+    st.markdown("## 2. Klasifikasi Nilai (2)")
     st.markdown("Berdasarkan klasifikasi emosi")
     st.markdown("#### Akurasi Model")
 
-    # st.write(acc_ce)
-    acc_bar_plot(acc_ce)
-    st.write('''Pada visualisasi di atas, diketahui bahwa ketiga algoritma dapat mengklasifikasikan data Class Emosi dengan akurasi rendah. Hal ini dapat dilihat dari akurasi yang ditunjukkan diagram batang, di mana akurasi tiap algoritma tidak ada yang mencapai 80%, bahkan hanya 50%. Hasil akurasi ini sangat rendah jika dibandingkan dengan klasifikasi nilai menggunakan data Nilai Emosi. Hal ini sangat dimungkinkan terjadi karena klasifikasi Class Emosi menggunakan data regulasi emosi secara langsung atau dengan kata lain generalisasi / kesimpulan dari emosi yang dimiliki mahasiswa. Sedangkan klasifikasi Nilai Emosi menggunakan data yang membentuk regulasi emosi mahasiswa sehingga data menjadi lebih banyak dan spesifik. Oleh sebab itu, akurasi pada Class Emosi tidak baik dan datanya tidak cocok digunakan untuk mengklasifikasikan nilai mahasiswa akibat kurang spesifiknya emosi mahasiswa yang menggambarkan nilai yang didapatkan.''')
+    # st.write(acc_ce_def)
+    acc_bar_plot(acc_ce_def)
+    st.write('''Pada visualisasi di atas, diketahui bahwa ketiga algoritma dapat mengklasifikasikan data Class Emosi dengan akurasi rendah. Hal ini dapat dilihat dari akurasi yang ditunjukkan diagram batang, di mana akurasi tiap algoritma tidak ada yang mencapai 80%, bahkan hanya di sekitar 55%.''')
 
     st.markdown("#### Confusion Matrix")
-    cm_ce_NB['Class'] = delete_postfix_nilai(cm_ce_NB)
-    cm_ce_SVM['Class'] = delete_postfix_nilai(cm_ce_SVM)
-    cm_ce_KNN['Class'] = delete_postfix_nilai(cm_ce_KNN)
-    view_conf_matrix(cm_ce_NB, cm_ce_SVM, cm_ce_KNN)
+    cm_ce_def_NB['Class'] = delete_postfix_nilai(cm_ce_def_NB)
+    cm_ce_def_SVM['Class'] = delete_postfix_nilai(cm_ce_def_SVM)
+    cm_ce_def_KNN['Class'] = delete_postfix_nilai(cm_ce_def_KNN)
+    view_conf_matrix(cm_ce_def_NB, cm_ce_def_SVM, cm_ce_def_KNN)
     st.markdown("<hr></hr>", unsafe_allow_html=True)
 
     
     ########### Ringkasan Klasifikasi ############
-    st.markdown("## 6. Ringkasan Akurasi Klasifikasi")
+    st.markdown("## 3. Ringkasan Akurasi Klasifikasi")
+
+    # preprocessing dataframe
+    acc_sum_def = pd.DataFrame()
+    acc_sum_def = pd.concat([acc_sum_def, get_acc_summary('Nilai Emosi', acc_ne_def)], ignore_index=True)
+    acc_sum_def = pd.concat([acc_sum_def, get_acc_summary('Kelas Emosi', acc_ce_def)], ignore_index=True)
+    # st.write(acc_sum)
+
+    # plotting
+    bar_sum_def = alt.Chart(acc_sum_def).mark_bar().encode(
+        x=alt.X("Algorithm", sort=acc_sum_def['Algorithm'].unique()),
+        y='Accuracy', column=alt.Column('Classification', sort=acc_sum_def['Classification'].unique()),
+        color='Algorithm', tooltip=['Classification','Algorithm','Accuracy']
+        ).properties(width=130)
+    st.altair_chart(bar_sum_def)
+
+    st.write('''Pada ringkasan visualisasi di atas, didapatkan bahwa hasil akurasi pada klasifikasi Class Emosi lebih rendah jika dibandingkan dengan klasifikasi nilai menggunakan data Nilai Emosi. Hal ini sangat dimungkinkan terjadi karena klasifikasi Class Emosi menggunakan data regulasi emosi secara langsung atau dengan kata lain generalisasi / kesimpulan dari emosi yang dimiliki mahasiswa. Sedangkan klasifikasi Nilai Emosi menggunakan data yang membentuk regulasi emosi mahasiswa sehingga data menjadi lebih banyak dan spesifik. Oleh sebab itu, akurasi pada Class Emosi tidak baik dan datanya tidak cocok digunakan untuk mengklasifikasikan nilai mahasiswa akibat kurang spesifiknya emosi mahasiswa yang menggambarkan nilai yang didapatkan.''')
+
+
+    ########### Nilai Emosi ############
+    st.markdown("## 4. Penggunaan Hyperparameter Tuning pada Klasifikasi Nilai")
+    st.markdown("Klasifikasi nilai emosi dengan hyperparameter tuning")
+    st.markdown("#### Akurasi Model")
+
+    # st.write(acc_ne_tun)
+    acc_bar_plot(acc_ne_tun)
+    st.write('''Pada visualisasi di atas, diketahui bahwa ketiga algoritma dapat mengklasifikasikan data Nilai Emosi dengan baik namun rendah pada algoritma Naive Bayes. Hal ini dapat dilihat dari akurasi yang ditunjukkan diagram batang, di mana akurasi berada di atas 80% selain algoritma Naive Bayes.''')
+
+    st.markdown("#### Classification Report")
+    with st.expander("Show Content"):
+        st.table(cr_ne_tun.set_index('Klasifikasi'))
+
+    st.markdown("#### Confusion Matrix")
+    cm_ne_tun_NB['Class'] = delete_postfix_nilai(cm_ne_tun_NB)
+    cm_ne_tun_SVM['Class'] = delete_postfix_nilai(cm_ne_tun_SVM)
+    cm_ne_tun_KNN['Class'] = delete_postfix_nilai(cm_ne_tun_KNN)
+    view_conf_matrix(cm_ne_tun_NB, cm_ne_tun_SVM, cm_ne_tun_KNN)
+    st.markdown("<hr></hr>", unsafe_allow_html=True)
+
+
+    ########### Perbandingan Klasifikasi dengan dan tanpa Hyperparameter Tuning ############
+    st.markdown("## 5. Perbandingan Klasifikasi Nilai dengan dan tanpa Hyperparameter Tuning")
+    st.markdown("Berdasarkan nilai emosi")
 
     # preprocessing dataframe
     acc_sum = pd.DataFrame()
-    acc_sum = pd.concat([acc_sum, get_acc_summary('AEQ-s', acc_aeq)], ignore_index=True)
-    acc_sum = pd.concat([acc_sum, get_acc_summary('DASS-21', acc_dass)], ignore_index=True)
-    acc_sum = pd.concat([acc_sum, get_acc_summary('ERQ', acc_erq)], ignore_index=True)
-    acc_sum = pd.concat([acc_sum, get_acc_summary('Nilai Emosi', acc_ne)], ignore_index=True)
-    acc_sum = pd.concat([acc_sum, get_acc_summary('Kelas Emosi', acc_ce)], ignore_index=True)
+    acc_sum = pd.concat([acc_sum, get_acc_summary('Tanpa Tuning', acc_ne_def)], ignore_index=True)
+    acc_sum = pd.concat([acc_sum, get_acc_summary('Dengan Tuning', acc_ne_tun)], ignore_index=True)
     # st.write(acc_sum)
 
     # plotting
@@ -193,3 +184,4 @@ def klasifikasi():
         ).properties(width=130)
     st.altair_chart(bar_sum)
 
+    st.write('''Pada ringkasan visualisasi di atas, didapatkan bahwa penggunaan Hyperparameter Tuning dapat meningkatkan performa algoritma klasifikasi. Hal ini disebabkan karena hyperparameter tuning dapat mengontrol proses pelatihan model sehingga didapatkan hyperparameter model dan hasil klasifikasi yang optimal. Diketahui, akurasi algoritma Support Vector Machine lebih mendominasi daripada dua algoritma lainnya. Dengan kata lain, algoritma Support Vector Machine cocok digunakan untuk dataset yang digunakan dalam proyek ini.''')
